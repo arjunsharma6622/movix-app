@@ -23,15 +23,17 @@ const Home: React.FC<HomeProps> = ({ type }) => {
     fetch_list()
   }, [type, genre])
 
+  console.log("LISTT", lists)
+
   return (
     <div className='home'>
       <Navbar />
 
       <Featured type={type!} setGenre={setGenre} />
 
-      {!isListsLoading && (lists.length !== 0) ?
+      {!isListsLoading && (lists.length > 0) ?
         <div className='px-14 py-0 flex flex-col gap-10'>
-          {lists.map((list, index) => (
+          {lists?.map((list, index) => (
             <List list={list} key={index} />
           ))}
         </div>
