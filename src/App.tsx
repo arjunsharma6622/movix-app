@@ -1,5 +1,5 @@
 import Home from "./pages/Home/Home"
-import "./app.css"
+import "./App.css"
 import Watch from "./pages/Watch/Watch";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
