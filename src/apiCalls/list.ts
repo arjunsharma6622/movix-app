@@ -1,12 +1,15 @@
 import axiosInstance from "../axiosInstance"
 import { ListType } from "../types/list";
 
-export const getLists = async ({type, genre} : {type ?: string, genre ?: string}) => {
+export const getLists = async ({type, genre, setIsLoading} : {type ?: string, genre ?: string, setIsLoading ?: (loading : boolean) => void}) => {
     try {
+        setIsLoading!(true);
         const res = await axiosInstance.get(`/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`);
+        setIsLoading!(false)
         return res.data;
     }
     catch (error) {
+        setIsLoading!(false)
         console.log("Error getting lists ", error);
     }
 }

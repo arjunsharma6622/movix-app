@@ -1,20 +1,15 @@
+import { MovieType } from '@/types/movie';
 import Listitem from '../List item/Listitem';
+import { ListType } from '@/types/list';
 
-interface ListProps {
-  list: {
-    title: string;
-    content: [];
-  };
-}
-
-const List = ({ list }: ListProps) => {
+const List = ({ list }: { list: ListType }) => {
 
   return (
     <div className="relative w-full">
       <h1 className="">{list?.title}</h1>
       <div className=' flex items-center gap-4 w-full'>
-        {list.content.map((movieId) => (
-          <Listitem movieId={movieId} key={movieId} />
+        {list.contentDetails!.map((movie: MovieType) => (
+          <Listitem movie={movie} key={movie._id} />
         ))}
       </div>
     </div>

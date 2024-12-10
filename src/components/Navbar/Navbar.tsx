@@ -1,4 +1,4 @@
-import { BellDot, LogOut, Search, User2 } from 'lucide-react'
+import { ArrowUpRight, BellDot, LogOut, Search, User2 } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./navbar.css"
@@ -16,7 +16,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         await logout();
         toast.success("User Logged out!")
-        setTimeout(() => {window.location.reload()}, 1000)
+        setTimeout(() => { window.location.reload() }, 1000)
     }
 
     return (
@@ -38,6 +38,10 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex items-center gap-8">
+                        <Link target='_blank' to={"https://movix-admin.vercel.app/"} className='text-green-600 bg-green-200 flex items-center gap-1 p-1.5 px-2 rounded-full text-sm cursor-pointer'>
+                            ADMIN Panel
+                            <ArrowUpRight className='w-5 h-5' />
+                        </Link>
                         <Search className='icon' />
                         <BellDot className='icon' />
                         <div className='flex items-center gap-2'>
@@ -45,7 +49,7 @@ const Navbar = () => {
                             {JSON.parse(localStorage.getItem("user")!).username}
                         </div>
                         <div className='text-red-600 bg-red-200 flex items-center gap-1 p-1.5 px-2 rounded-full text-sm cursor-pointer' onClick={handleLogout}>
-                            <LogOut className='w-5 h-5'/>
+                            <LogOut className='w-5 h-5' />
                             Logout
                         </div>
                     </div>

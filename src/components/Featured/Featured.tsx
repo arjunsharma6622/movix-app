@@ -54,9 +54,6 @@ const Featured = ({ type, setGenre }: { type: string, setGenre: (genre: string) 
 
             <div className="info z-[40]">
                 <img src={featuredMovie?.imgTitle} alt="" className='trailer_img' />
-                <span className="">
-                    {featuredMovie?.title}
-                </span>
                 <div className="flex items-center gap-4">
                     <Link to={`/watch/${featuredMovie?._id}`} >
                         <button className="play">

@@ -1,4 +1,3 @@
-import axiosInstance from "@/axiosInstance";
 import {
   Dialog,
   DialogContent,
@@ -6,25 +5,12 @@ import {
 } from "@/components/ui/dialog";
 import { MovieType } from "@/types/movie";
 import { ChevronDown, Play } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const Listitem = ({ movieId }: { movieId: string }) => {
+const Listitem = ({ movie }: { movie: MovieType }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [movie, setMovie] = useState<MovieType | null>(null);
-
-  useEffect(() => {
-    const getMovie = async () => {
-      try {
-        const res = await axiosInstance.get(`/movie/find/${movieId}`);
-        setMovie(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getMovie();
-  }, [movieId]);
 
   return (
     <div
@@ -33,7 +19,7 @@ const Listitem = ({ movieId }: { movieId: string }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`rounded-md`}>
-        <img loading="lazy" src={movie?.img} className="rounded-md" />
+        <img loading="lazy" src={movie?.img} className="rounded-md w-[280px]" />
       </div>
 
       <div className={`bg-black/80 w-full h-full absolute top-0 rounded-md ${isHovered ? "block" : "hidden"} flex items-center justify-center gap-6`}>
