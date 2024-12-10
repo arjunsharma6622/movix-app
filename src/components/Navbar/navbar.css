@@ -1,0 +1,53 @@
+.navbar {
+    width: 100%;
+    color: white;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    font-size: 15px;
+    background: linear-gradient(to top, transparent 0%, #000 50%);
+}
+.navbar.scrolled {
+    background-color: var(--main-color);
+}
+.navbar .container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+.navbar .container .left {
+    display: flex;
+    align-items: center;
+}
+.navbar .container .left img {
+    width: 150px;
+    margin-right: 40px;
+}
+.navbar .container .left span {
+    margin-right: 20px;
+    cursor: pointer;
+}
+.navbar .container .right {
+    display: flex;
+    align-items: center;
+}
+.navbar .container .right .icon {
+    margin: 0px 15px;
+    cursor: pointer;
+}
+.navbar .container .right .profile .options {
+    display: none;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+.navbar .container .right .profile span {
+    padding: 20px;
+    cursor: pointer;
+}
+.navbar .container .right .profile:hover .options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}

@@ -1,0 +1,75 @@
+.featured {
+    position: relative;
+}
+.featured .category {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.featured .category select {
+    cursor: pointer;
+    background-color: var(--main-color);
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    margin-left: 10px;
+    padding: 5px;
+}
+.featured .category select:focus {
+    outline: none;
+}
+.featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.featured .info {
+    width: 35%;
+    position: absolute;
+    left: 50px;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.featured .info .trailer_img {
+    border-radius: 5px;
+    cursor: pointer;
+}
+.featured .info img {
+    width: 300px;
+}
+.featured .info .desc {
+    margin: 20px 0px;
+}
+.featured .info {
+    display: flex;
+}
+.featured .info button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 110px;
+}
+.featured .info button.play {
+    background-color: white;
+    color: black;
+}
+.featured .info button.more {
+    background-color: #acacac;
+    color: white;
+}
+.featured .info button span {
+    margin-left: 5px;
+}

@@ -1,0 +1,13 @@
+
+.home{
+    background-color: var(--main-color);
+    color: white;
+    overflow: hidden;
+}
+
+.listsContainer{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
